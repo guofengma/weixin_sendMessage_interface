@@ -1,0 +1,21 @@
+server:
+  port: 8088
+
+
+###########公众号信息#############
+token:
+  app:
+    appId: wx340bee18bbaf18d4
+    appSecret: 5b94de1a45a09d465ade46d57680dc65
+    tokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s
+  corp: 
+    corpId: wwf12802c3b3d5babe
+    AgentId: 1000002
+    corpSecret: Pa9ntY5S3spskNaN-DKd1nbZO9RsvYrWTvOFjMFPdWU
+    tokenUrl: https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=%s&corpsecret=%s
+  
+sendMessage:
+  app:
+    url: https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s
+  corp:
+    url: https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=%s
