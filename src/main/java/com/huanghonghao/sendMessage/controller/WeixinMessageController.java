@@ -29,9 +29,10 @@ public class WeixinMessageController {
 	@RequestMapping(value = "/sendMessage")
 	@ResponseBody
 	public ResponseBean sendBusiMessagee(@RequestBody BusiMessageRequestBean busiMessageRequestBean) {
-		corpUrl = String.format(corpUrl, TokenThread.accessToken.getAccessToken());
-		log.info("corpUrl: {}", corpUrl);
-		return restTemplate.postForObject(corpUrl, busiMessageRequestBean, ResponseBean.class);
+		String tempCorpUrl = corpUrl;
+		tempCorpUrl = String.format(corpUrl, TokenThread.accessToken.getAccessToken());
+		log.info("corpUrl: {}", tempCorpUrl);
+		return restTemplate.postForObject(tempCorpUrl, busiMessageRequestBean, ResponseBean.class);
 	} 
 	
 }
